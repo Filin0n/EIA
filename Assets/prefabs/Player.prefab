@@ -1351,8 +1351,8 @@ GameObject:
   - component: {fileID: 3124331878078292620}
   - component: {fileID: 3124331878078292622}
   - component: {fileID: 3124331878078292623}
-  - component: {fileID: 3124331878078292608}
   - component: {fileID: 3350318226548742151}
+  - component: {fileID: 3124331878078292608}
   - component: {fileID: 1934680712}
   - component: {fileID: 5158266766929286583}
   - component: {fileID: 1684715031}
@@ -1409,12 +1409,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7db038309080f4598672c83a4efa31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 6
-  runSpeed: 11
-  smoothSpeed: 8
-  Current_Speed: 0
-  jumpForce: 1
-  GravityForce: 0.3
+  _walkSpeed: 5
+  _runSpeed: 15
+  _smoothSpeed: 10
+  jumpForce: 30
+  GravityForce: 10
 --- !u!114 &3124331878078292623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1427,27 +1426,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d5d2c1f5cf301544aa6f38ba24d4be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Camera: {fileID: 3124331877690863462}
-  Object: {fileID: 3124331878078292619}
-  mouseSensetive: 1
-  minimumAngle: -90
-  maximumAngle: 90
---- !u!114 &3124331878078292608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3124331878078292619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 332ae07d6bb80144c9fc55a2dacfeee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _fpcCamera: {fileID: 3124331877690863462}
-  _maxDistanceRay: 2.5
-  press_e: {fileID: 1343866203243742269}
-  DropEwaponsPrefabs: []
+  _camera: {fileID: 3124331877690863462}
+  _player: {fileID: 3124331878078292619}
+  _mouseSensetive: 5
+  _smoothDampTime: 0.15
+  _minAngle: -90
+  _maxAngle: 90
 --- !u!114 &3350318226548742151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1460,9 +1444,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b3c5ae2e2b2b134cb08c2e0a0b9e430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max_hp: 70
-  curent_hp: 0
-  HalthBar: {fileID: 8573917805213564933}
+  _maxHp: 50
+  _curentHP: 0
+  _halthBar: {fileID: 0}
+--- !u!114 &3124331878078292608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3124331878078292619}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332ae07d6bb80144c9fc55a2dacfeee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fpcCamera: {fileID: 3124331877690863462}
+  _maxDistanceRay: 2.5
+  press_e: {fileID: 1343866203243742269}
+  DropEwaponsPrefabs:
+  - {fileID: 3033945600497427767, guid: c6b7bc1c0a18bf04b9f0b80e3ac8b7cf, type: 3}
+  - {fileID: 1596269016162523676, guid: 7e58d5695b9708041b7fe7510a61646b, type: 3}
+  - {fileID: 3854532538015555346, guid: 00d7a91ec6ed2bb43accc38ca6cb6017, type: 3}
 --- !u!114 &1934680712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1470,7 +1473,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3124331878078292619}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd7458abcf7f5ce439ff04d033ebb1a8, type: 3}
   m_Name: 
@@ -1484,7 +1487,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3124331878078292619}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 796683e84ca2c5b4ebbea7da44510ee2, type: 3}
   m_Name: 
@@ -1502,7 +1505,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3124331878078292619}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0579c0848e69cc447901e681bb39eaf6, type: 3}
   m_Name: 
@@ -1975,7 +1978,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5445012306439118824
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2234,7 +2237,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8994841556886060259
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3175,6 +3178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EmptyHand
       objectReference: {fileID: 0}
+    - target: {fileID: 1704758702648938592, guid: 61b6ec9f1928c9842aa32de0218a55a7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4655392711555485184, guid: 61b6ec9f1928c9842aa32de0218a55a7, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3322,6 +3329,10 @@ PrefabInstance:
     - target: {fileID: 1704758702648938592, guid: 61b6ec9f1928c9842aa32de0218a55a7, type: 3}
       propertyPath: m_Name
       value: EmptyHand
+      objectReference: {fileID: 0}
+    - target: {fileID: 1704758702648938592, guid: 61b6ec9f1928c9842aa32de0218a55a7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4655392711555485184, guid: 61b6ec9f1928c9842aa32de0218a55a7, type: 3}
       propertyPath: m_RootOrder

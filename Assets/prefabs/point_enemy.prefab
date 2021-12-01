@@ -177,6 +177,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -485,9 +486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b6a7dcf30b9bb4981142f0fb7417b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dist: 0
-  player: {fileID: 0}
-  radius: 15
+  _agroRadius: 10
 --- !u!114 &537044041278653259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,8 +499,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be2555d378759e6429a5f2b31f3864ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 20
-  Ragdoll: {fileID: 5690961783537501094, guid: 75383cc9b6d6e3a45bdb7501c414242d, type: 3}
+  _hp: 20
+  _ragdoll: {fileID: 5690961783537501094, guid: 75383cc9b6d6e3a45bdb7501c414242d, type: 3}
 --- !u!114 &2483706416304939131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,8 +513,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33a9eb340ea0a4540ac9d099a1ca93cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon_1: {fileID: 537044041662932332}
-  weapon_2: {fileID: 8401980156965478625}
+  _weapon1: {fileID: 537044041662932332}
+  _weapon2: {fileID: 8401980156965478625}
 --- !u!114 &1186330909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,10 +527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b6ef94e5562cb4bb0108e3fc6934d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _points: []
 --- !u!1 &908214099771576563
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,7 +619,7 @@ Transform:
   - {fileID: 4279651827470051792}
   m_Father: {fileID: 3976075628922609178}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 45.210102, y: 11.245324, z: 6.1844206}
+  m_LocalEulerAnglesHint: {x: 42.32536, y: 12.791124, z: 9.96969}
 --- !u!1 &1293766597689500499
 GameObject:
   m_ObjectHideFlags: 0
@@ -1535,6 +1531,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1704,7 +1701,7 @@ Transform:
   - {fileID: 6034602586874656138}
   m_Father: {fileID: 3218197076571740831}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 1.8281698, y: -0.740319, z: 14.126051}
+  m_LocalEulerAnglesHint: {x: 354.49655, y: 358.0515, z: 18.76904}
 --- !u!1 &4499262183104921338
 GameObject:
   m_ObjectHideFlags: 0
@@ -1735,7 +1732,7 @@ Transform:
   - {fileID: 9094720487253051566}
   m_Father: {fileID: 6589514392089941451}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 36.726643, y: -9.395009, z: -5.864997}
+  m_LocalEulerAnglesHint: {x: 42.334156, y: 349.03717, z: 351.03726}
 --- !u!1 &5114807664052329714
 GameObject:
   m_ObjectHideFlags: 0
@@ -1962,6 +1959,7 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2346,7 +2344,7 @@ Transform:
   - {fileID: 5894683327512641783}
   m_Father: {fileID: 3907617122511477089}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -44.59746, y: 14.689856, z: 6.834739}
+  m_LocalEulerAnglesHint: {x: 321.676, y: 13.434212, z: 7.5362916}
 --- !u!1 &6956333093019239485
 GameObject:
   m_ObjectHideFlags: 0
@@ -2439,7 +2437,7 @@ Transform:
   - {fileID: 3168554895678046885}
   m_Father: {fileID: 9094720487253051566}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0.47779447, y: 0.0000007034837, z: 0.0000032062824}
+  m_LocalEulerAnglesHint: {x: 359.54666, y: 0.0000059281037, z: -0.000008734747}
 --- !u!1 &7166230997720477525
 GameObject:
   m_ObjectHideFlags: 0
@@ -2880,7 +2878,7 @@ Transform:
   - {fileID: 3994526733875455183}
   m_Father: {fileID: 5894683327512641783}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -9.100525, y: 1.3599073, z: -10.451524}
+  m_LocalEulerAnglesHint: {x: 350.10403, y: 2.3640375, z: 342.95395}
 --- !u!65 &1461323309
 BoxCollider:
   m_ObjectHideFlags: 0
